@@ -72,4 +72,53 @@ npm test
 Please check out [LoopBack 4 documentation](https://loopback.io/doc/en/lb4/) to
 understand how you can continue to add features to this application.
 
-[![LoopBack](https://github.com/loopbackio/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png)](http://loopback.io/)
+[![LoopBack](<https://github.com/loopbackio/loopback-next/raw/master/docs/site/imgs/branding/Powered-by-LoopBack-Badge-(blue)-@2x.png>)](http://loopback.io/)
+
+## Steps followed to auto-generate api using LoopBack:
+
+1. npm i -g @loopback/cli
+2. create a new project:
+   a. lb4 app
+   b. Answer the prompts as follows:
+   ? Project name: getting-started
+   ? Project description: Getting started tutorial
+   ? Project root directory: getting-started
+   ? Application class name: StarterApplication
+   ? Select features to enable in the project:
+   ❯◉ Enable eslint: add a linter with pre-configured lint rules
+   ◉ Enable prettier: install prettier to format code conforming to rules
+   ◉ Enable mocha: install mocha to run tests
+   ◉ Enable loopbackBuild: use @loopback/build helpers (e.g. lb-eslint)
+   ◉ Enable editorconfig: add EditorConfig files
+   ◉ Enable vscode: add VSCode config files
+   ◉ Enable docker: include Dockerfile and .dockerignore
+   ◉ Enable repositories: include repository imports and RepositoryMixin
+   ◉ Enable services: include service-proxy imports and ServiceMixin
+   Starting the project
+3. Starting the project
+   cd getting-started
+   npm i
+   npm start
+4. Added the controller
+   a.lb4 controller
+   b.Answer the prompts as follows:
+   ? Controller class name: hello
+   ? What kind of controller would you like to generate? Empty Controller
+   create src/controllers/hello.controller.ts
+   update src/controllers/index.ts
+
+Controller hello was now created in src/controllers/
+
+5. Pasted the following contents into the file /src/controllers/hello.controller.ts
+
+import {get} from '@loopback/rest';
+
+export class HelloController {
+@get('/hello')
+hello(): string {
+return 'Hello world!';
+}
+}
+
+6. Start the application using npm start.
+7. Visit http://127.0.0.1:3000/hello to see Hello world!
